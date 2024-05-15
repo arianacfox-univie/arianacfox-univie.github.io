@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Testing HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background: #2d98e4;
+            color: #515151;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 54px;
+        }
+        .content, .content-reverse {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            height: 350px;
+        }
+        .carousel {
+            /* position: relative; */
+            width: auto; /* Adjust based on your preference */
+            cursor: pointer;
+            margin-right: 20px;
+        }
+        .content-reverse {
+            flex-direction: row-reverse;
+        }
+        .carousel img {
+            width: 300px;
+            height: 300px;
+            margin-right: 20px;
+            display: none; /* Hide images by default */
+        }
+        .carousel img.active {
+            display: block; /* Show active image */
+        }
+        .content .description {
+            flex: 1;
+        }
+        .label {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 10px; /* Smaller font size */
+            color: #808080; /* Gray color */
+        }
+        .description {
+            flex: 1;
+            padding: 20px; /* Adds padding inside the description box */
+            margin: 0 20px; /* Adds margin on the sides for spacing between elements */
+            background-color: #ffffff; /* Sets a white background for clarity */
+            border-radius: 5px; /* Rounds the corners of the description box */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+            font-size: 16px; /* Sets the font size */
+            line-height: 1.6; /* Sets the line height for better readability */
+            color: #333; /* Dark gray color for the text, which is easy on the eyes */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        Hi! I'm Ariana Fox
+    </div>
+    <div class="content">
+        <div class="carousel" onclick="advanceImage(this, ['World map showing USA', 'Moscow, ID: My birthplace', 'Ferndale, WA: My hometown'])">
+            <img src="map-of-the-united-states-of-america.gif" class="active" alt="Image 1">
+            <!-- <img src="IMG_0001.JPG" alt="Image 1"> -->
+            <img src="moscow.png" alt="Image 2">
+            <img src="ferndale_wa.gif" alt="Image 3">
+            <div class="label">World map showing USA</div>
+        </div>
+        <div class="description">
+            <p>I am from the United States and have lived there my entire life until I moved to Austria in 2022 to study.</p>
+            <p>I was born in a small town in Idaho, but I moved to Washington state when I was 4 and stayed there pretty much since then.</p>
+        </div>
+    </div>
+
+    <div class="content content-reverse">
+        <div class="carousel" onclick="advanceImage(this, ['University of Washington campus', 'Western Washington University campus', 'Eastern Washington University campus'])">
+            <img src="About-main1.1.jpg" class="active" alt="Image 4">
+            <img src="387123400_18401104558041542_6900022839404736864_n.jpg" alt="Image 2">
+            <img src="ewueagles_cover.jpeg" alt="Image 2">
+            <div class="label">University of Washington campus</div>
+        </div>        
+        <div class="description">
+            <p>I started my undergraduate degree in 2018 at the University of Washington.</p>
+            <p>After two quarters I transfered to Western Washington University, and then the following year I began studying at Eastern Washington University.</p>
+            <p>In 2021 I graduated Suma Cum Laude with a Major in Mathematics and Minors in Spanish and Computer Science.</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="carousel" onclick="advanceImage(this, ['My typical shift working at Disney World', 'Employee exclusive photo op', 'At the wedding'])">
+            <img src="IMG_0059.JPG" class="active" alt="Image 1">
+            <img src="IMG_9265.JPG" alt="Image 2">
+            <img src="IMG_0488.JPG" alt="Image 2">
+            <div class="label">My typical shift working at Disney World</div>
+        </div> 
+        <div class="description">
+            <p>Between finishing my undergraduate degree and starting my Master's, I briefly worked at Walt Disney World in Flordia.</p>
+            <p>My family vacationed there often when I was growing up, and it was a lifelong dream of mine to get to live there for a bit.</p>
+            <p>I made many friends working there, and when I had to miss the last online lecture for this class it was because I was a bridesmaid in the wedding of a friend I had made there.</p>
+        </div>
+    </div>
+
+    <div class="content content-reverse">
+        <div class="carousel" onclick="advanceImage(this, ['Uni Vie main building', `My employer's logo`, 'At the end of the half marathon'])">
+            <img src="csm_Flaggen_Hauptgebaeude_univie___c__Universitaet_Wien_Alex_Schuppich_bca74f5b67.jpg" class="active" alt="Image 1">
+            <img src="download.png" alt="Image 2">
+            <img src="IMG_7434.jpg" alt="Image 2">
+            <div class="label">Uni Vie main building</div>
+
+        </div>        
+        <div class="description">
+            <p>Currently I am in my Master's Degree of Data Science at the University of Vienna.</p>
+            <p>I also work part time in the Trade Finance department at RBI.</p>
+            <p>My hobbies include running and reading, and I recently ran the Vienna City Half Marathon.</p>
+        </div>
+    </div>
+
+    <!-- <script>
+        function advanceImage(carouselElement) {
+            const images = carouselElement.querySelectorAll('img');
+            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            images[activeIndex].classList.remove('active');
+            activeIndex = (activeIndex + 1) % images.length;
+            images[activeIndex].classList.add('active');
+        }
+    </script> -->
+
+    <!-- <script>
+        function advanceImage(carouselElement) {
+            const images = carouselElement.querySelectorAll('img');
+            const labels = [
+                "World map showing USA", "Moscow, ID: My birthplace", "Ferndale, WA: My hometown",  // Update these labels as needed
+                "University of Washington campus", "Label for Image 5", "Label for Image 6"
+            ];
+            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            images[activeIndex].classList.remove('active');
+            activeIndex = (activeIndex + 1) % images.length;
+            images[activeIndex].classList.add('active');
+            carouselElement.querySelector('.label').textContent = labels[activeIndex];
+        }
+    </script> -->
+
+    <script>
+        function advanceImage(carouselElement, labels) {
+            const images = carouselElement.querySelectorAll('img');
+            const labelElement = carouselElement.querySelector('.label');
+            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            images[activeIndex].classList.remove('active');
+            activeIndex = (activeIndex + 1) % images.length;
+            images[activeIndex].classList.add('active');
+            labelElement.textContent = labels[activeIndex];
+        }
+    </script>
+
+</body>
+</html>
